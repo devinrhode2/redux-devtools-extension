@@ -189,7 +189,7 @@ export function connect(preConfig) {
   const config = preConfig || {};
   const id = generateId(config.instanceId);
   if (!config.instanceId) config.instanceId = id;
-  if (!config.name) config.name = document.title && id === 1 ? document.title : `Instance ${id}`;
+  if (!config.name) config.name = '' && id === 1 ? '' : `Instance ${id}`;
   if (config.serialize) config.serialize = getSeralizeParameter(config);
   const actionCreators = config.actionCreators || {};
   const latency = config.latency;
@@ -285,7 +285,7 @@ export function connect(preConfig) {
       }
       message.libConfig = {
         actionCreators: JSON.stringify(getActionsArray(actionCreators)),
-        name: config.name || document.title,
+        name: config.name || '',
         features: config.features,
         serialize: !!config.serialize,
         type: config.type

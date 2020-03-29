@@ -215,7 +215,7 @@ const __REDUX_DEVTOOLS_EXTENSION__ = function(reducer, preloadedState, config) {
           actionCreators = getActionsArray(config.actionCreators);
         }
         relayState(undefined, {
-          name: config.name || document.title,
+          name: config.name || '',
           actionCreators: JSON.stringify(actionCreators),
           features: config.features,
           serialize: !!config.serialize,
